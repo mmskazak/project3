@@ -1,6 +1,15 @@
 <template>
         <div>
-            <h1>Hello!</h1>
+            <div>
+                <p>
+                <router-link :to="{name:'home'}"> Home </router-link>
+                <router-link :to="{name:'about'}"> About </router-link>
+                </p>
+            </div>
+            <div>
+              <router-view></router-view>
+            </div>
+
         </div>
 </template>
 
