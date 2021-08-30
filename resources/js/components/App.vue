@@ -1,22 +1,15 @@
 <template>
     <v-app>
-        <v-content>
+        <v-main>
             <v-container>
                 <div>
                     <Header/>
                 </div>
                 <div>
-                    <p>
-                        <router-link :to="{name:'home'}"> Home </router-link>
-                        <router-link :to="{name:'about'}"> About </router-link>
-                    </p>
-                </div>
-                <div>
                     <router-view></router-view>
                 </div>
-
             </v-container>
-        </v-content>
+        </v-main>
     </v-app>
 
 </template>

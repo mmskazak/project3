@@ -6,7 +6,7 @@ import vuetify from './vuetify';
 
 import App from "./components/App";
 import Home from "./components/Home";
-import About from "./components/About";
+import CreateTrip from "./components/CreateTrip";
 
 Vue.use(VueRouter);
 
@@ -20,10 +20,10 @@ const router = new VueRouter({
             component: Home
         },
         {
-            path: '/about',
-            name:'about',
-            component: About
-        }
+            path: '/create-trip',
+            name:'create-trip',
+            component: CreateTrip
+        },
     ],
 })
 

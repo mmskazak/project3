@@ -23,14 +23,15 @@ class TripFactory extends Factory
     public function definition()
     {
         $toMoscow = $this->faker->numberBetween(0, 1);
+        $passenger_seats = $this->faker->numberBetween(1,3);
 
         return [
             'to_moscow' => $toMoscow,
             'to_serpukhov' => $toMoscow === 0 ? 1 : 0,
             'date_time' => $this->faker->dateTimeBetween('-5 day','now'),
-            'description' => $this->faker->realText(),
+            'description' => $this->faker->realText(100),
             'passenger_seats' => $this->faker->numberBetween(1,3),
-            'busy' => $this->faker->numberBetween(1,3),
+            'busy' => $passenger_seats - 1,
             'user_id' => 1,
             'created_at' => now(),
             'updated_at' => now(),
