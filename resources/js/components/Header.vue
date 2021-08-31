@@ -25,40 +25,13 @@
                 Register
             </v-btn>
         </v-app-bar>
-        <v-navigation-drawer
-            v-model="drawer"
-            absolute
-            left
-            temporary
-        />
     </v-col>
 </template>
 
 <script>
-import {DRIVER, PASSENGER} from "../constants";
 
 export default {
-    data() {
-        return {
-            DRIVER: DRIVER,
-            PASSENGER: PASSENGER,
-            iPassenger: true,
-            iDriver: false,
-            drawer: false,
-            group: null,
-        };
-    },
-    methods: {
-        whoIs(whoIs) {
-            if (whoIs === this.PASSENGER) {
-                this.iPassenger = true;
-                this.iDriver = false;
-            } else {
-                this.iPassenger = false;
-                this.iDriver = true;
-            }
-        }
-    },
+
 }
 </script>
 

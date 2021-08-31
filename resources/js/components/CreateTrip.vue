@@ -1,24 +1,25 @@
 <template>
-    <v-form
-        ref="form"
-        lazy-validation
-    >
-        <v-textarea
-            label="Информация о предстоящей поездке"
-        ></v-textarea>
-        <v-row>
-            <ChooseDate/>
-            <ChooseTime/>
-        </v-row>
-        <v-row>
-            <CostTrip/>
-        </v-row>
-        <v-row>
-            <v-btn
-                elevation="2"
-            >Создать поездку</v-btn>
-        </v-row>
-    </v-form>
+    <div>
+        <h1>Create Trip</h1>
+        <v-form>
+            <v-textarea
+                label="Информация о предстоящей поездке"
+            ></v-textarea>
+            <v-row>
+                <ChooseDate/>
+                <ChooseTime/>
+            </v-row>
+            <v-row>
+                <CostTrip/>
+            </v-row>
+            <v-row>
+                <v-btn
+                    elevation="2"
+                >Создать поездку
+                </v-btn>
+            </v-row>
+        </v-form>
+    </div>
 </template>
 
 <script>

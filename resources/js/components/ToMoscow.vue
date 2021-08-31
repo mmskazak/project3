@@ -1,22 +1,5 @@
 <template>
     <div>
-        <v-row>
-            <v-col cols="12">
-                <v-checkbox
-                    v-model="today"
-                    label="Today"
-                    color="info"
-                    hide-details
-                ></v-checkbox>
-                <v-checkbox
-                    v-model="tomorrow"
-                    label="Tomorrow"
-                    color="info"
-                    hide-details
-                ></v-checkbox>
-            </v-col>
-        </v-row>
-
         <h1>Trips to Moscow</h1>
 
         <v-data-table

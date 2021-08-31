@@ -1,11 +1,15 @@
-to-serpukhov<template>
-    <v-data-table
-        dense
-        :headers="headers"
-        :items="trips"
-        item-key="name"
-        class="elevation-1"
-    ></v-data-table>
+<template>
+    <div>
+        <h1>Trips to Serpukhov</h1>
+
+        <v-data-table
+            dense
+            :headers="headers"
+            :items="trips"
+            item-key="name"
+            class="elevation-1 mt-5"
+        ></v-data-table>
+    </div>
 </template>
 
 <script>

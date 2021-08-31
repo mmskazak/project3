@@ -2131,6 +2131,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -2258,7 +2259,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../constants */ "./resources/js/constants.js");
 //
 //
 //
@@ -2289,36 +2289,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  data: function data() {
-    return {
-      DRIVER: _constants__WEBPACK_IMPORTED_MODULE_0__.DRIVER,
-      PASSENGER: _constants__WEBPACK_IMPORTED_MODULE_0__.PASSENGER,
-      iPassenger: true,
-      iDriver: false,
-      drawer: false,
-      group: null
-    };
-  },
-  methods: {
-    whoIs: function whoIs(_whoIs) {
-      if (_whoIs === this.PASSENGER) {
-        this.iPassenger = true;
-        this.iDriver = false;
-      } else {
-        this.iPassenger = false;
-        this.iDriver = true;
-      }
-    }
-  }
-});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
 
 /***/ }),
 
@@ -2368,23 +2339,6 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -2491,6 +2445,10 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
+//
+//
+//
+//
 //
 //
 //
@@ -2627,23 +2585,6 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
-
-/***/ }),
-
-/***/ "./resources/js/constants.js":
-/*!***********************************!*\
-  !*** ./resources/js/constants.js ***!
-  \***********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "PASSENGER": () => (/* binding */ PASSENGER),
-/* harmony export */   "DRIVER": () => (/* binding */ DRIVER)
-/* harmony export */ });
-var PASSENGER = 0;
-var DRIVER = 1;
 
 /***/ }),
 
@@ -21823,17 +21764,17 @@ var render = function() {
   return _c(
     "v-app",
     [
+      _c("Drawer", {
+        attrs: { "left-menu": _vm.isShowLeftMenu },
+        on: { "menu-status": _vm.menuIsOpenOrClose }
+      }),
+      _vm._v(" "),
       _c("Header", {
         on: {
           drawer: function($event) {
             return _vm.showMenu()
           }
         }
-      }),
-      _vm._v(" "),
-      _c("Drawer", {
-        attrs: { "left-menu": _vm.isShowLeftMenu },
-        on: { "menu-status": _vm.menuIsOpenOrClose }
       }),
       _vm._v(" "),
       _c("v-main", [_c("v-container", [_c("router-view")], 1)], 1),
@@ -22175,23 +22116,30 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "v-form",
-    { ref: "form", attrs: { "lazy-validation": "" } },
+    "div",
     [
-      _c("v-textarea", {
-        attrs: { label: "Информация о предстоящей поездке" }
-      }),
-      _vm._v(" "),
-      _c("v-row", [_c("ChooseDate"), _vm._v(" "), _c("ChooseTime")], 1),
-      _vm._v(" "),
-      _c("v-row", [_c("CostTrip")], 1),
+      _c("h1", [_vm._v("Create Trip")]),
       _vm._v(" "),
       _c(
-        "v-row",
+        "v-form",
         [
-          _c("v-btn", { attrs: { elevation: "2" } }, [
-            _vm._v("Создать поездку")
-          ])
+          _c("v-textarea", {
+            attrs: { label: "Информация о предстоящей поездке" }
+          }),
+          _vm._v(" "),
+          _c("v-row", [_c("ChooseDate"), _vm._v(" "), _c("ChooseTime")], 1),
+          _vm._v(" "),
+          _c("v-row", [_c("CostTrip")], 1),
+          _vm._v(" "),
+          _c(
+            "v-row",
+            [
+              _c("v-btn", { attrs: { elevation: "2" } }, [
+                _vm._v("Создать поездку\n            ")
+              ])
+            ],
+            1
+          )
         ],
         1
       )
@@ -22409,18 +22357,7 @@ var render = function() {
           ])
         ],
         1
-      ),
-      _vm._v(" "),
-      _c("v-navigation-drawer", {
-        attrs: { absolute: "", left: "", temporary: "" },
-        model: {
-          value: _vm.drawer,
-          callback: function($$v) {
-            _vm.drawer = $$v
-          },
-          expression: "drawer"
-        }
-      })
+      )
     ],
     1
   )
@@ -22483,41 +22420,6 @@ var render = function() {
   return _c(
     "div",
     [
-      _c(
-        "v-row",
-        [
-          _c(
-            "v-col",
-            { attrs: { cols: "12" } },
-            [
-              _c("v-checkbox", {
-                attrs: { label: "Today", color: "info", "hide-details": "" },
-                model: {
-                  value: _vm.today,
-                  callback: function($$v) {
-                    _vm.today = $$v
-                  },
-                  expression: "today"
-                }
-              }),
-              _vm._v(" "),
-              _c("v-checkbox", {
-                attrs: { label: "Tomorrow", color: "info", "hide-details": "" },
-                model: {
-                  value: _vm.tomorrow,
-                  callback: function($$v) {
-                    _vm.tomorrow = $$v
-                  },
-                  expression: "tomorrow"
-                }
-              })
-            ],
-            1
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
       _c("h1", [_vm._v("Trips to Moscow")]),
       _vm._v(" "),
       _c("v-data-table", {
@@ -22556,15 +22458,23 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("v-data-table", {
-    staticClass: "elevation-1",
-    attrs: {
-      dense: "",
-      headers: _vm.headers,
-      items: _vm.trips,
-      "item-key": "name"
-    }
-  })
+  return _c(
+    "div",
+    [
+      _c("h1", [_vm._v("Trips to Serpukhov")]),
+      _vm._v(" "),
+      _c("v-data-table", {
+        staticClass: "elevation-1 mt-5",
+        attrs: {
+          dense: "",
+          headers: _vm.headers,
+          items: _vm.trips,
+          "item-key": "name"
+        }
+      })
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true

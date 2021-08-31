@@ -1,7 +1,7 @@
 <template>
     <v-app>
-        <Header @drawer="showMenu()"/>
         <Drawer :left-menu="isShowLeftMenu" @menu-status="menuIsOpenOrClose"/>
+        <Header @drawer="showMenu()"/>
         <v-main>
             <v-container>
                 <router-view></router-view>
