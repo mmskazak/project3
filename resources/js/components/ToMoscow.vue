@@ -1,4 +1,4 @@
-<template>
+to-serpukhov<template>
     <v-data-table
         dense
         :headers="headers"
@@ -25,10 +25,6 @@ export default {
         this.loadTripsToMoscow();
     },
     methods: {
-        async loadTripsToSerpukhov() {
-            const {data} = await axios.get('api/trips/to/serpukhov');
-            this.trips = data
-        },
         async loadTripsToMoscow() {
             const {data} = await axios.get('api/trips/to/moscow');
             this.trips = data

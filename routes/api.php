@@ -15,4 +15,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::apiResource('trips', TripController::class);
+Route::get('/trips/to/{place}', [TripController::class, 'index']);

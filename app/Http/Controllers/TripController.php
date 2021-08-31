@@ -12,11 +12,19 @@ class TripController extends Controller
     /**
      * Display a listing of the resource.
      *
+     * @param Request $request
+     * @param $place
      * @return \Illuminate\Support\Collection
      */
-    public function index(): \Illuminate\Support\Collection
+    public function index(Request $request, $place): \Illuminate\Support\Collection
     {
-        $trips =  Trip::all();
+
+        if($place === 'serpukhov') {
+            $trips =  Trip::where('to_serpukhov',Trip::TO_SERPUKHOV)->get();
+        } else {
+            $trips =  Trip::where('to_moscow',Trip::TO_MOSCOW)->get();
+        }
+
         return TripResource::collection($trips)->collection;
     }
 

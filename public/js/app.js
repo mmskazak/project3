@@ -2278,6 +2278,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
@@ -2393,10 +2394,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     };
   },
   mounted: function mounted() {
-    this.loadTrips();
+    this.loadTripsToMoscow();
   },
   methods: {
-    loadTrips: function loadTrips() {
+    loadTripsToSerpukhov: function loadTripsToSerpukhov() {
       var _this = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
@@ -2407,7 +2408,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return axios.get('api/trips');
+                return axios.get('api/trips/to/serpukhov');
 
               case 2:
                 _yield$axios$get = _context.sent;
@@ -2420,6 +2421,32 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             }
           }
         }, _callee);
+      }))();
+    },
+    loadTripsToMoscow: function loadTripsToMoscow() {
+      var _this2 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
+        var _yield$axios$get2, data;
+
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.next = 2;
+                return axios.get('api/trips/to/moscow');
+
+              case 2:
+                _yield$axios$get2 = _context2.sent;
+                data = _yield$axios$get2.data;
+                _this2.trips = data;
+
+              case 5:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
       }))();
     }
   }
@@ -2435,12 +2462,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
-/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
+/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
 /* harmony import */ var _vuetify__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./vuetify */ "./resources/js/vuetify.js");
 /* harmony import */ var _components_App__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/App */ "./resources/js/components/App.vue");
-/* harmony import */ var _components_Home__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Home */ "./resources/js/components/Home.vue");
-/* harmony import */ var _components_CreateTrip__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/CreateTrip */ "./resources/js/components/CreateTrip.vue");
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./routes */ "./resources/js/routes.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
@@ -2448,21 +2474,13 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
 
-
-vue__WEBPACK_IMPORTED_MODULE_4__.default.use(vue_router__WEBPACK_IMPORTED_MODULE_5__.default);
-var router = new vue_router__WEBPACK_IMPORTED_MODULE_5__.default({
+console.log(_routes__WEBPACK_IMPORTED_MODULE_2__.default);
+vue__WEBPACK_IMPORTED_MODULE_3__.default.use(vue_router__WEBPACK_IMPORTED_MODULE_4__.default);
+var router = new vue_router__WEBPACK_IMPORTED_MODULE_4__.default({
   mode: 'history',
-  routes: [{
-    path: '/',
-    name: 'home',
-    component: _components_Home__WEBPACK_IMPORTED_MODULE_2__.default
-  }, {
-    path: '/create-trip',
-    name: 'create-trip',
-    component: _components_CreateTrip__WEBPACK_IMPORTED_MODULE_3__.default
-  }]
+  routes: _routes__WEBPACK_IMPORTED_MODULE_2__.default
 });
-var app = new vue__WEBPACK_IMPORTED_MODULE_4__.default({
+var app = new vue__WEBPACK_IMPORTED_MODULE_3__.default({
   el: '#app',
   components: {
     App: _components_App__WEBPACK_IMPORTED_MODULE_1__.default
@@ -2519,6 +2537,41 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 var PASSENGER = 0;
 var DRIVER = 1;
+
+/***/ }),
+
+/***/ "./resources/js/routes.js":
+/*!********************************!*\
+  !*** ./resources/js/routes.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _components_Home__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/Home */ "./resources/js/components/Home.vue");
+/* harmony import */ var _components_CreateTrip__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/CreateTrip */ "./resources/js/components/CreateTrip.vue");
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ([{
+  path: '/',
+  name: 'home',
+  component: _components_Home__WEBPACK_IMPORTED_MODULE_0__.default
+}, {
+  path: '/to-moscow',
+  name: 'to-moscow',
+  component: ToMoscow
+}, {
+  path: '/to-serpukhov',
+  name: 'to-serpukhov',
+  component: ToSerpukhov
+}, {
+  path: '/create-trip',
+  name: 'create-trip',
+  component: _components_CreateTrip__WEBPACK_IMPORTED_MODULE_1__.default
+}]);
 
 /***/ }),
 
@@ -22044,7 +22097,7 @@ var render = function() {
                         ? _c(
                             "v-tab",
                             { attrs: { to: { name: "create-trip" } } },
-                            [_vm._v("my trips")]
+                            [_vm._v("to Serpukhov")]
                           )
                         : _vm._e(),
                       _vm._v(" "),
@@ -22052,7 +22105,15 @@ var render = function() {
                         ? _c(
                             "v-tab",
                             { attrs: { to: { name: "create-trip" } } },
-                            [_vm._v("create trips")]
+                            [_vm._v("to Moscow")]
+                          )
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _vm.iDriver
+                        ? _c(
+                            "v-tab",
+                            { attrs: { to: { name: "create-trip" } } },
+                            [_vm._v("Create trip")]
                           )
                         : _vm._e()
                     ],

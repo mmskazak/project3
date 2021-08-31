@@ -29,8 +29,9 @@
                 <v-tabs align-with-title>
                     <v-tab v-if="iPassenger" :to="{name:'home'}">to one</v-tab>
                     <v-tab v-if="iPassenger" :to="{name:'home'}">to two</v-tab>
-                    <v-tab v-if="iDriver" :to="{name:'create-trip'}">my trips</v-tab>
-                    <v-tab v-if="iDriver" :to="{name:'create-trip'}">create trips</v-tab>
+                    <v-tab v-if="iDriver" :to="{name:'create-trip'}">to Serpukhov</v-tab>
+                    <v-tab v-if="iDriver" :to="{name:'create-trip'}">to Moscow</v-tab>
+                    <v-tab v-if="iDriver" :to="{name:'create-trip'}">Create trip</v-tab>
                 </v-tabs>
             </template>
         </v-app-bar>
