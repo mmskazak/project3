@@ -1,52 +1,73 @@
 <template>
-    <v-app-bar
-        color="#6A76AB"
-        dark
-        shrink-on-scroll
-        prominent
-        src="https://picsum.photos/1920/1080?random"
-        fade-img-on-scroll
-        scroll-target="#scrolling-techniques-3"
-    >
-        <template v-slot:img="{ props }">
-            <v-img
-                v-bind="props"
-                gradient="to top right, rgba(100,115,201,.7), rgba(25,32,72,.7)"
-            ></v-img>
-        </template>
+    <v-col class="font-weight-bold white--text">
+        <v-app-bar app
+                   color="#6A76AB"
+                   dark
+        >
+            <template v-slot:img="{ props }">
+                <v-img
+                    v-bind="props"
+                    gradient="to top right, rgba(100,115,201,.7), rgba(25,32,72,.7)"
+                ></v-img>
+            </template>
 
-        <v-app-bar-nav-icon></v-app-bar-nav-icon>
+            <v-app-bar-nav-icon @click="$emit('drawer')"></v-app-bar-nav-icon>
 
-        <v-app-bar-title>Москва - Серпухов</v-app-bar-title>
+            <v-app-bar-title>Hello world</v-app-bar-title>
 
-        <v-spacer></v-spacer>
+            <v-spacer></v-spacer>
 
-        <v-btn icon>
-            <v-icon>mdi-magnify</v-icon>
-        </v-btn>
+            <v-btn icon>
+                <v-icon @click="whoIs(PASSENGER)">mdi-account</v-icon>
+            </v-btn>
 
-        <v-btn icon>
-            <v-icon>mdi-heart</v-icon>
-        </v-btn>
+            <v-btn icon>
+                <v-icon @click="whoIs(DRIVER)">mdi-car</v-icon>
+            </v-btn>
 
-        <v-btn icon>
-            <v-icon>mdi-dots-vertical</v-icon>
-        </v-btn>
-
-        <template v-slot:extension>
-            <v-tabs align-with-title>
-                <v-tab :to="{name:'home'}">в Москву</v-tab>
-                <v-tab :to="{name:'home'}">в Серпухов</v-tab>
-                <v-tab :to="{name:'create-trip'}">Мои поездки</v-tab>
-                <v-tab :to="{name:'create-trip'}">Создать поездку</v-tab>
-            </v-tabs>
-        </template>
-    </v-app-bar>
+            <template v-slot:extension>
+                <v-tabs align-with-title>
+                    <v-tab v-if="iPassenger" :to="{name:'home'}">to one</v-tab>
+                    <v-tab v-if="iPassenger" :to="{name:'home'}">to two</v-tab>
+                    <v-tab v-if="iDriver" :to="{name:'create-trip'}">my trips</v-tab>
+                    <v-tab v-if="iDriver" :to="{name:'create-trip'}">create trips</v-tab>
+                </v-tabs>
+            </template>
+        </v-app-bar>
+        <v-navigation-drawer
+            v-model="drawer"
+            absolute
+            left
+            temporary
+        />
+    </v-col>
 </template>
 
 <script>
+import {DRIVER, PASSENGER} from "../constants";
+
 export default {
-    name: "Header.vue"
+    data() {
+        return {
+            DRIVER: DRIVER,
+            PASSENGER: PASSENGER,
+            iPassenger: true,
+            iDriver: false,
+            drawer: false,
+            group: null,
+        };
+    },
+    methods: {
+        whoIs(whoIs) {
+            if (whoIs === this.PASSENGER) {
+                this.iPassenger = true;
+                this.iDriver = false;
+            } else {
+                this.iPassenger = false;
+                this.iDriver = true;
+            }
+        }
+    },
 }
 </script>
 
