@@ -13,20 +13,24 @@
                 v-model="group"
                 active-class="deep-purple--text text--accent-4"
             >
-                <v-list-item>
-                    <v-list-item-title>Foo</v-list-item-title>
+                <v-list-item :to="{name:'home'}" exact>
+                    <v-list-item-title>Home</v-list-item-title>
                 </v-list-item>
 
-                <v-list-item>
-                    <v-list-item-title>Bar</v-list-item-title>
+                <v-list-item :to="{name:'to-moscow'}">
+                    <v-list-item-title>to Moscow</v-list-item-title>
                 </v-list-item>
 
-                <v-list-item>
-                    <v-list-item-title>Fizz</v-list-item-title>
+                <v-list-item :to="{name:'to-serpukhov'}">
+                    <v-list-item-title>to Serpukhov</v-list-item-title>
                 </v-list-item>
 
-                <v-list-item>
-                    <v-list-item-title>Buzz</v-list-item-title>
+                <v-list-item :to="{name:'create-trip'}">
+                    <v-list-item-title>Create trip</v-list-item-title>
+                </v-list-item>
+
+                <v-list-item :to="{name:'about'}">
+                    <v-list-item-title>About</v-list-item-title>
                 </v-list-item>
             </v-list-item-group>
         </v-list>

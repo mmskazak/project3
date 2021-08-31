@@ -13,27 +13,17 @@
 
             <v-app-bar-nav-icon @click="$emit('drawer')"></v-app-bar-nav-icon>
 
-            <v-app-bar-title>Hello world</v-app-bar-title>
+            <v-app-bar-title>Trips</v-app-bar-title>
 
             <v-spacer></v-spacer>
 
-            <v-btn icon>
-                <v-icon @click="whoIs(PASSENGER)">mdi-account</v-icon>
+            <v-btn text>
+                Sing in
             </v-btn>
 
-            <v-btn icon>
-                <v-icon @click="whoIs(DRIVER)">mdi-car</v-icon>
+            <v-btn text>
+                Register
             </v-btn>
-
-            <template v-slot:extension>
-                <v-tabs align-with-title>
-                    <v-tab v-if="iPassenger" :to="{name:'home'}">to one</v-tab>
-                    <v-tab v-if="iPassenger" :to="{name:'home'}">to two</v-tab>
-                    <v-tab v-if="iDriver" :to="{name:'create-trip'}">to Serpukhov</v-tab>
-                    <v-tab v-if="iDriver" :to="{name:'create-trip'}">to Moscow</v-tab>
-                    <v-tab v-if="iDriver" :to="{name:'create-trip'}">Create trip</v-tab>
-                </v-tabs>
-            </template>
         </v-app-bar>
         <v-navigation-drawer
             v-model="drawer"

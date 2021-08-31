@@ -1,6 +1,6 @@
 <template>
-    <v-footer>
-        <v-col class="font-weight-bold text-center">
+    <v-footer color="#6A76AB">
+        <v-col class="font-weight-bold text-center white--text">
             All rights reserved
         </v-col>
     </v-footer>

@@ -1,5 +1,8 @@
 import Home from "./components/Home";
 import CreateTrip from "./components/CreateTrip";
+import ToMoscow from "./components/ToMoscow";
+import ToSerpukhov from "./components/ToSerpukhov";
+import About from "./components/About";
 
 export default [
     {
@@ -22,4 +25,10 @@ export default [
         name: 'create-trip',
         component: CreateTrip
     },
+    {
+        path: '/about',
+        name: 'about',
+        component: About
+    },
+
 ]

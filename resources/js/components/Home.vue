@@ -1,17 +1,11 @@
 <template>
     <div>
-        <h1>HOME</h1>
-        <ListTrips/>
+        <h1>Home</h1>
     </div>
 </template>
 
 <script>
-import ListTrips from "./ListTrips";
-
 export default {
-    components:{
-      ListTrips,
-    },
     data() {
         return {
             trips: [],
