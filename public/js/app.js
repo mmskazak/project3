@@ -1862,6 +1862,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "About"
 });
@@ -1882,8 +1886,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Header */ "./resources/js/components/Header.vue");
 /* harmony import */ var _Footer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Footer */ "./resources/js/components/Footer.vue");
 /* harmony import */ var _Drawer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Drawer */ "./resources/js/components/Drawer.vue");
-//
-//
 //
 //
 //
@@ -2132,6 +2134,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -2242,6 +2248,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Footer"
 });
@@ -2259,6 +2269,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+//
+//
+//
+//
 //
 //
 //
@@ -2339,6 +2353,12 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2445,6 +2465,12 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -21729,16 +21755,13 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c(
+    "v-container",
+    [_c("v-row", [_c("v-col", [_c("h1", [_vm._v("About")])])], 1)],
+    1
+  )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [_c("h1", [_vm._v("About")])])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -21777,7 +21800,7 @@ var render = function() {
         }
       }),
       _vm._v(" "),
-      _c("v-main", [_c("v-container", [_c("router-view")], 1)], 1),
+      _c("v-main", [_c("router-view")], 1),
       _vm._v(" "),
       _c("Footer")
     ],
@@ -22116,27 +22139,43 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "div",
+    "v-container",
     [
-      _c("h1", [_vm._v("Create Trip")]),
-      _vm._v(" "),
       _c(
-        "v-form",
+        "v-row",
         [
-          _c("v-textarea", {
-            attrs: { label: "Информация о предстоящей поездке" }
-          }),
-          _vm._v(" "),
-          _c("v-row", [_c("ChooseDate"), _vm._v(" "), _c("ChooseTime")], 1),
-          _vm._v(" "),
-          _c("v-row", [_c("CostTrip")], 1),
-          _vm._v(" "),
           _c(
-            "v-row",
+            "v-col",
             [
-              _c("v-btn", { attrs: { elevation: "2" } }, [
-                _vm._v("Создать поездку\n            ")
-              ])
+              _c("h1", [_vm._v("Create Trip")]),
+              _vm._v(" "),
+              _c(
+                "v-form",
+                [
+                  _c("v-textarea", {
+                    attrs: { label: "Информация о предстоящей поездке" }
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "v-row",
+                    [_c("ChooseDate"), _vm._v(" "), _c("ChooseTime")],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("v-row", [_c("CostTrip")], 1),
+                  _vm._v(" "),
+                  _c(
+                    "v-row",
+                    [
+                      _c("v-btn", { attrs: { elevation: "2" } }, [
+                        _vm._v("Создать поездку\n                    ")
+                      ])
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
             ],
             1
           )
@@ -22271,9 +22310,23 @@ var render = function() {
     "v-footer",
     { attrs: { color: "#6A76AB" } },
     [
-      _c("v-col", { staticClass: "font-weight-bold text-center white--text" }, [
-        _vm._v("\n        All rights reserved\n    ")
-      ])
+      _c(
+        "v-container",
+        [
+          _c(
+            "v-row",
+            [
+              _c(
+                "v-col",
+                { staticClass: "font-weight-bold text-center white--text" },
+                [_vm._v("\n                All rights reserved\n            ")]
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
     ],
     1
   )
@@ -22302,59 +22355,71 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "v-col",
-    { staticClass: "font-weight-bold white--text" },
+    "v-container",
     [
       _c(
-        "v-app-bar",
-        {
-          attrs: { app: "", color: "#6A76AB", dark: "" },
-          scopedSlots: _vm._u([
-            {
-              key: "img",
-              fn: function(ref) {
-                var props = ref.props
-                return [
-                  _c(
-                    "v-img",
-                    _vm._b(
-                      {
-                        attrs: {
-                          gradient:
-                            "to top right, rgba(100,115,201,.7), rgba(25,32,72,.7)"
-                        }
-                      },
-                      "v-img",
-                      props,
-                      false
-                    )
-                  )
-                ]
-              }
-            }
-          ])
-        },
+        "v-row",
         [
-          _vm._v(" "),
-          _c("v-app-bar-nav-icon", {
-            on: {
-              click: function($event) {
-                return _vm.$emit("drawer")
-              }
-            }
-          }),
-          _vm._v(" "),
-          _c("v-app-bar-title", [_vm._v("Trips")]),
-          _vm._v(" "),
-          _c("v-spacer"),
-          _vm._v(" "),
-          _c("v-btn", { attrs: { text: "" } }, [
-            _vm._v("\n            Sing in\n        ")
-          ]),
-          _vm._v(" "),
-          _c("v-btn", { attrs: { text: "" } }, [
-            _vm._v("\n            Register\n        ")
-          ])
+          _c(
+            "v-col",
+            { staticClass: "font-weight-bold white--text" },
+            [
+              _c(
+                "v-app-bar",
+                {
+                  attrs: { app: "", color: "#6A76AB", dark: "" },
+                  scopedSlots: _vm._u([
+                    {
+                      key: "img",
+                      fn: function(ref) {
+                        var props = ref.props
+                        return [
+                          _c(
+                            "v-img",
+                            _vm._b(
+                              {
+                                attrs: {
+                                  gradient:
+                                    "to top right, rgba(100,115,201,.7), rgba(25,32,72,.7)"
+                                }
+                              },
+                              "v-img",
+                              props,
+                              false
+                            )
+                          )
+                        ]
+                      }
+                    }
+                  ])
+                },
+                [
+                  _vm._v(" "),
+                  _c("v-app-bar-nav-icon", {
+                    on: {
+                      click: function($event) {
+                        return _vm.$emit("drawer")
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("v-app-bar-title", [_vm._v("Trips")]),
+                  _vm._v(" "),
+                  _c("v-spacer"),
+                  _vm._v(" "),
+                  _c("v-btn", { attrs: { text: "" } }, [
+                    _vm._v("\n                    Sing in\n                ")
+                  ]),
+                  _vm._v(" "),
+                  _c("v-btn", { attrs: { text: "" } }, [
+                    _vm._v("\n                    Register\n                ")
+                  ])
+                ],
+                1
+              )
+            ],
+            1
+          )
         ],
         1
       )
@@ -22418,19 +22483,33 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "div",
+    "v-container",
     [
-      _c("h1", [_vm._v("Trips to Moscow")]),
-      _vm._v(" "),
-      _c("v-data-table", {
-        staticClass: "elevation-1 mt-5",
-        attrs: {
-          dense: "",
-          headers: _vm.headers,
-          items: _vm.trips,
-          "item-key": "name"
-        }
-      })
+      _c(
+        "v-row",
+        [
+          _c("v-col", [
+            _c(
+              "div",
+              [
+                _c("h1", [_vm._v("Trips to Moscow")]),
+                _vm._v(" "),
+                _c("v-data-table", {
+                  staticClass: "elevation-1 mt-5",
+                  attrs: {
+                    dense: "",
+                    headers: _vm.headers,
+                    items: _vm.trips,
+                    "item-key": "name"
+                  }
+                })
+              ],
+              1
+            )
+          ])
+        ],
+        1
+      )
     ],
     1
   )
@@ -22459,19 +22538,33 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "div",
+    "v-container",
     [
-      _c("h1", [_vm._v("Trips to Serpukhov")]),
-      _vm._v(" "),
-      _c("v-data-table", {
-        staticClass: "elevation-1 mt-5",
-        attrs: {
-          dense: "",
-          headers: _vm.headers,
-          items: _vm.trips,
-          "item-key": "name"
-        }
-      })
+      _c(
+        "v-row",
+        [
+          _c("v-col", [
+            _c(
+              "div",
+              [
+                _c("h1", [_vm._v("Trips to Serpukhov")]),
+                _vm._v(" "),
+                _c("v-data-table", {
+                  staticClass: "elevation-1 mt-5",
+                  attrs: {
+                    dense: "",
+                    headers: _vm.headers,
+                    items: _vm.trips,
+                    "item-key": "name"
+                  }
+                })
+              ],
+              1
+            )
+          ])
+        ],
+        1
+      )
     ],
     1
   )

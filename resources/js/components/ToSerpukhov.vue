@@ -1,15 +1,21 @@
 <template>
-    <div>
-        <h1>Trips to Serpukhov</h1>
+    <v-container>
+        <v-row>
+            <v-col>
+                <div>
+                    <h1>Trips to Serpukhov</h1>
 
-        <v-data-table
-            dense
-            :headers="headers"
-            :items="trips"
-            item-key="name"
-            class="elevation-1 mt-5"
-        ></v-data-table>
-    </div>
+                    <v-data-table
+                        dense
+                        :headers="headers"
+                        :items="trips"
+                        item-key="name"
+                        class="elevation-1 mt-5"
+                    ></v-data-table>
+                </div>
+            </v-col>
+        </v-row>
+    </v-container>
 </template>
 
 <script>

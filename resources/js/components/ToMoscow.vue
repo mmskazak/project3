@@ -1,23 +1,29 @@
 <template>
-    <div>
-        <h1>Trips to Moscow</h1>
+    <v-container>
+        <v-row>
+            <v-col>
+                <div>
+                    <h1>Trips to Moscow</h1>
 
-        <v-data-table
-            dense
-            :headers="headers"
-            :items="trips"
-            item-key="name"
-            class="elevation-1 mt-5"
-        >
-        </v-data-table>
-    </div>
+                    <v-data-table
+                        dense
+                        :headers="headers"
+                        :items="trips"
+                        item-key="name"
+                        class="elevation-1 mt-5"
+                    >
+                    </v-data-table>
+                </div>
+            </v-col>
+        </v-row>
+    </v-container>
 </template>
 
 <script>
 export default {
     data: () => ({
-        today:true,
-        tomorrow:true,
+        today: true,
+        tomorrow: true,
         trips: [],
         headers: [
             {text: 'Направление', value: 'direction', width: "15%"},

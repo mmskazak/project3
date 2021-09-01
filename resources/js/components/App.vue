@@ -3,9 +3,7 @@
         <Drawer :left-menu="isShowLeftMenu" @menu-status="menuIsOpenOrClose"/>
         <Header @drawer="showMenu()"/>
         <v-main>
-            <v-container>
-                <router-view></router-view>
-            </v-container>
+            <router-view></router-view>
         </v-main>
         <Footer/>
     </v-app>
