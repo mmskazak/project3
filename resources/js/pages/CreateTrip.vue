@@ -27,9 +27,9 @@
 </template>
 
 <script>
-import ChooseDate from "./ChooseDate";
-import ChooseTime from "./ChooseTime";
-import CostTrip from "./CostTrip";
+import ChooseDate from "../components/ChooseDate";
+import ChooseTime from "../components/ChooseTime";
+import CostTrip from "../components/CostTrip";
 
 export default {
     components: {

@@ -10,9 +10,9 @@
 </template>
 
 <script>
-import Header from "./Header";
-import Footer from "./Footer";
-import Drawer from "./Drawer";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import Drawer from "../components/Drawer";
 
 export default {
     name: "App",
@@ -34,7 +34,13 @@ export default {
         },
         menuIsOpenOrClose(drawer) {
             this.drawer = drawer;
+        },
+        async goSanctum() {
+             await axios.get('sanctum/csrf-cookie');
         }
+    },
+    mounted() {
+        this.goSanctum();
     },
 }
 </script>

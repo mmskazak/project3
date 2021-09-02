@@ -1,8 +1,8 @@
-import Home from "./components/Home";
-import CreateTrip from "./components/CreateTrip";
-import ToMoscow from "./components/ToMoscow";
-import ToSerpukhov from "./components/ToSerpukhov";
-import About from "./components/About";
+import Home from "./pages/Home";
+import CreateTrip from "./pages/CreateTrip";
+import ToMoscow from "./pages/ToMoscow";
+import ToSerpukhov from "./pages/ToSerpukhov";
+import About from "./pages/About";
 
 export default [
     {
